@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <TextView
+        android:id="@+id/tanggalTv"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="text view"/>
+
+    <TextView
+        android:id="@+id/itemBarang"
+        app:layout_constraintTop_toBottomOf="@+id/tanggalTv"
+        app:layout_constraintLeft_toLeftOf="@id/tanggalTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Item Barang"
+        android:textStyle="bold"
+        android:textSize="20sp"/>
+
+    <TextView
+        android:id="@+id/jumlahText"
+        app:layout_constraintTop_toBottomOf="@id/itemBarang"
+        app:layout_constraintLeft_toLeftOf="@id/itemBarang"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="10"/>
+
+    <ImageButton
+        android:layout_marginRight="8dp"
+        android:id="@+id/editBtn"
+        app:layout_constraintRight_toLeftOf="@id/deleteBtn"
+        app:layout_constraintTop_toTopOf="@id/deleteBtn"
+        app:layout_constraintBottom_toBottomOf="@id/deleteBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/edit"/>
+
+    <ImageButton
+        android:layout_marginRight="16dp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:id="@+id/deleteBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/delete"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
