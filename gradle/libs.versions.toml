@@ -20,7 +20,7 @@ androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version
 material = { group = "com.google.android.material", name = "material", version.ref = "material" }
 androidx-activity = { group = "androidx.activity", name = "activity", version.ref = "activity" }
 androidx-constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayout", version.ref = "constraintlayout" }
-androidx-room-ktx = { group = "anddroidx.room", name = "room-ktx", version.ref = "vroom"}
+androidx-room-ktx = { group = "androidx.room", name = "room-ktx", version.ref = "vroom"}
 androidx-room-compiler = { group="androidx.room", name="room-compiler", version.ref = "vroom" }
 androidx-room-runtime = { group="androidx.room", name="room-runtime", version.ref = "vroom" }
 
