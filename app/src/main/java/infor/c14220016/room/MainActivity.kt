@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import infor.c14220016.room.database.daftarBelanja
 import infor.c14220016.room.database.daftarBelanjaDB
+import infor.c14220016.room.database.historyBelanja
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.async
@@ -41,6 +42,11 @@ class MainActivity : AppCompatActivity() {
             startActivity(Intent(this, TambahDaftar::class.java))
         }
 
+        var _fabHistory = findViewById<FloatingActionButton>(R.id.toHistory)
+        _fabHistory.setOnClickListener {
+            startActivity(Intent(this, historyView::class.java))
+        }
+
         adapterDaftar = adapterDaftar(arDaftar)
 
         var _rvDaftar = findViewById<RecyclerView>(R.id.rvNotes)
@@ -58,6 +64,19 @@ class MainActivity : AppCompatActivity() {
                         }
                     }
                 }
+
+                override fun done(dtBelanja: daftarBelanja) {
+                    CoroutineScope(Dispatchers.IO).async {
+                        DB.funHistoryBelanjaDAO().insert(
+                            historyBelanja(
+                                tanggal = dtBelanja.tanggal,
+                                item = dtBelanja.item,
+                                jumlah = dtBelanja.jumlah
+                            )
+                        )
+                        delData(dtBelanja)
+                    }
+                }
             })
 
     }
@@ -71,6 +90,4 @@ class MainActivity : AppCompatActivity() {
         }
 
     }
-
-
 }

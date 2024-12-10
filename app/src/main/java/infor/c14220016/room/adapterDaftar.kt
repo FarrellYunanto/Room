@@ -25,6 +25,7 @@ class adapterDaftar(private val daftarBelanja: MutableList<daftarBelanja>): Recy
     private lateinit var onItemClickCallback: OnItemClickCallback
     interface OnItemClickCallback {
         fun delData(dtBelanja: daftarBelanja)
+        fun done(dtBelanja: daftarBelanja)
     }
 
     fun setOnItemClickCallback(onItemClickCallback: OnItemClickCallback){
@@ -48,6 +49,10 @@ class adapterDaftar(private val daftarBelanja: MutableList<daftarBelanja>): Recy
         holder._tvBtnDelete.setOnClickListener {
             onItemClickCallback.delData(daftar)
         }
+
+        holder._tbBtnDone.setOnClickListener {
+            onItemClickCallback.done(daftar)
+        }
     }
 
     override fun getItemCount(): Int {
@@ -59,6 +64,7 @@ class adapterDaftar(private val daftarBelanja: MutableList<daftarBelanja>): Recy
         var _tvJumlahBarang = itemView.findViewById<TextView>(R.id.jumlahText)
         var _tvTanggal = itemView.findViewById<TextView>(R.id.tanggalTv)
 
+        var _tbBtnDone = itemView.findViewById<ImageButton>(R.id.doneBtn)
         var _tvBtnEdit = itemView.findViewById<ImageButton>(R.id.editBtn)
         var _tvBtnDelete = itemView.findViewById<ImageButton>(R.id.deleteBtn)
     }

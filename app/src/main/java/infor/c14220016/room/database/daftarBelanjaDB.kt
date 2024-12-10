@@ -6,9 +6,10 @@ import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 
-@Database(entities = [daftarBelanja::class], version = 1)
+@Database(entities = [daftarBelanja::class, historyBelanja::class], version = 1)
 abstract class daftarBelanjaDB : RoomDatabase() {
     abstract fun fundaftarBelanjaDAO() : noteDAO
+    abstract fun funHistoryBelanjaDAO() : historyDAO
 
     companion object{
         @Volatile

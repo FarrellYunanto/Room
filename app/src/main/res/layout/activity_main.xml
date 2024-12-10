@@ -30,5 +30,15 @@
         app:layout_constraintEnd_toEndOf="parent"
         android:src="@drawable/add"/>
 
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/toHistory"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:layout_margin="32dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:src="@drawable/history"/>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
