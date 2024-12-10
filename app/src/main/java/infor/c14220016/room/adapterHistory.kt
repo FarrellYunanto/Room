@@ -24,7 +24,7 @@ class adapterHistory(private val historyBelanja: MutableList<historyBelanja>): R
         return historyBelanja.size
     }
 
-    override fun onBindViewHolder(holder: ListViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: adapterHistory.ListViewHolder, position: Int) {
         var daftar = historyBelanja[position]
 
         holder._tvTanggal.setText(daftar.tanggal)
